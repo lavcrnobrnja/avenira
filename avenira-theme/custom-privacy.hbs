@@ -2,12 +2,19 @@
 
 <section class="page-hero">
   <div class="container">
-    <h1>{{t "Privacy Policy"}}</h1>
-    <p>Last updated: March 2026 / Dernière mise à jour : mars 2026</p>
+    {{#match @site.locale "=" "en"}}
+      <h1>Privacy Policy</h1>
+      <p>Last updated: March 2026</p>
+    {{else}}
+      <h1>Politique de confidentialité</h1>
+      <p>Dernière mise à jour : mars 2026</p>
+    {{/match}}
   </div>
 </section>
 
 <div class="privacy-content">
+
+{{#match @site.locale "=" "en"}}
 
   <h2>1. Introduction</h2>
   <p>Avenira Automations ("we", "our", "us") is committed to protecting your personal information in accordance with Quebec's Act respecting the protection of personal information in the private sector (Loi 25) and applicable Canadian privacy legislation.</p>
@@ -57,32 +64,56 @@
   <h2>9. Changes to This Policy</h2>
   <p>We may update this privacy policy periodically. The "last updated" date at the top will reflect any changes. Continued use of our website constitutes acceptance of the updated policy.</p>
 
-  <hr style="border:none;border-top:1px solid var(--border-color);margin:48px 0">
+{{else}}
 
-  <h2>Politique de confidentialité</h2>
-  <p>Dernière mise à jour : mars 2026</p>
-
-  <h3>1. Introduction</h3>
+  <h2>1. Introduction</h2>
   <p>Avenira Automations (« nous », « notre ») s'engage à protéger vos renseignements personnels conformément à la Loi sur la protection des renseignements personnels dans le secteur privé (Loi 25) du Québec et à la législation canadienne applicable en matière de protection de la vie privée.</p>
+  <p>Cette politique décrit comment nous collectons, utilisons et protégeons vos renseignements personnels lorsque vous utilisez notre site Web ou faites appel à nos services.</p>
 
-  <h3>2. Renseignements collectés</h3>
+  <h2>2. Renseignements collectés</h2>
   <p>Nous pouvons collecter les renseignements personnels suivants :</p>
   <ul>
     <li><strong>Coordonnées :</strong> nom, adresse courriel, nom de l'entreprise — fournis volontairement via notre formulaire de contact.</li>
-    <li><strong>Données d'utilisation :</strong> pages visitées, temps passé, type de navigateur — collectées par témoins (cookies) avec votre consentement.</li>
+    <li><strong>Données d'utilisation :</strong> pages visitées, temps passé, type de navigateur et informations sur l'appareil — collectées par témoins (cookies) avec votre consentement.</li>
     <li><strong>Renseignements d'affaires :</strong> détails sur vos activités partagés lors de consultations.</li>
   </ul>
 
-  <h3>3. Utilisation des renseignements</h3>
-  <p>Nous utilisons vos renseignements pour répondre à vos demandes, fournir nos services, améliorer notre site Web et respecter nos obligations légales. Nous ne vendons pas vos renseignements personnels.</p>
+  <h2>3. Utilisation des renseignements</h2>
+  <p>Nous utilisons vos renseignements personnels pour :</p>
+  <ul>
+    <li>Répondre à vos demandes et fournir des consultations</li>
+    <li>Fournir nos services d'automatisation</li>
+    <li>Améliorer notre site Web et nos services</li>
+    <li>Respecter nos obligations légales</li>
+  </ul>
+  <p>Nous ne vendons pas vos renseignements personnels à des tiers.</p>
 
-  <h3>4. Témoins (Cookies)</h3>
-  <p>Conformément à la Loi 25, nous demandons votre consentement avant de placer des témoins non essentiels. Vous pouvez retirer votre consentement en tout temps.</p>
+  <h2>4. Témoins (Cookies)</h2>
+  <p>Notre site Web utilise des témoins pour améliorer votre expérience de navigation. Conformément à la Loi 25, nous demandons votre consentement avant de placer des témoins non essentiels. Vous pouvez retirer votre consentement en tout temps en effaçant les témoins de votre navigateur.</p>
 
-  <h3>5. Vos droits</h3>
-  <p>Vous avez le droit d'accéder à vos renseignements, de les faire corriger, de demander leur suppression, de retirer votre consentement et de demander la portabilité de vos données.</p>
+  <h2>5. Conservation des données</h2>
+  <p>Nous conservons les renseignements personnels seulement aussi longtemps que nécessaire pour remplir les objectifs décrits dans cette politique, ou selon les exigences de la loi. Les soumissions du formulaire de contact sont conservées pendant 24 mois, sauf si vous demandez une suppression anticipée.</p>
 
-  <h3>6. Responsable de la protection des renseignements personnels</h3>
+  <h2>6. Vos droits</h2>
+  <p>En vertu de la Loi 25, vous avez le droit de :</p>
+  <ul>
+    <li>Accéder à vos renseignements personnels détenus par nous</li>
+    <li>Demander la correction de renseignements inexacts</li>
+    <li>Demander la suppression de vos renseignements personnels</li>
+    <li>Retirer votre consentement au traitement des données</li>
+    <li>Demander la portabilité de vos renseignements</li>
+  </ul>
+
+  <h2>7. Sécurité des données</h2>
+  <p>Nous mettons en place des mesures techniques et organisationnelles appropriées pour protéger vos renseignements personnels contre tout accès, divulgation, modification ou destruction non autorisés.</p>
+
+  <h2>8. Responsable de la protection des renseignements personnels</h2>
+  <p>Pour toute question, préoccupation ou demande relative à vos renseignements personnels, veuillez contacter notre responsable de la protection des renseignements personnels :</p>
   <p>Courriel : <a href="mailto:info@avenira.ai">info@avenira.ai</a><br>Lieu : Montréal, Québec</p>
+
+  <h2>9. Modifications de cette politique</h2>
+  <p>Nous pouvons mettre à jour cette politique de confidentialité périodiquement. La date de « dernière mise à jour » en haut de la page reflétera tout changement. L'utilisation continue de notre site Web constitue l'acceptation de la politique mise à jour.</p>
+
+{{/match}}
 
 </div>

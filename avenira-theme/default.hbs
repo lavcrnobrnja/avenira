@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{meta_title}}</title>
 
-  {{!-- Hreflang for bilingual SEO --}}
+  {{!-- Hreflang for bilingual SEO (page-specific, set by JS below) --}}
   {{#match @site.locale "=" "en"}}
     <link rel="alternate" hreflang="en" href="https://avenira.ai/">
     <link rel="alternate" hreflang="fr" href="https://avenira.ai/fr/">
@@ -15,6 +15,13 @@
     <link rel="alternate" hreflang="en" href="https://avenira.ai/">
     <link rel="alternate" hreflang="x-default" href="https://avenira.ai/">
   {{/match}}
+
+  {{!-- OG image fallback (Ghost may override per-page via ghost_head) --}}
+  <meta property="og:image" content="https://avenira.ai/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://avenira.ai/assets/images/og-image.png">
 
   {{!-- Google Fonts --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +47,31 @@
   {{> cookie-banner}}
 
   <script src="{{asset "js/main.js"}}"></script>
+  <script>
+  (function(){
+    var map={
+      '/':'/fr/',
+      '/about/':'/fr/a-propos/',
+      '/services/':'/fr/services/',
+      '/grants/':'/fr/subventions/',
+      '/contact/':'/fr/contact/',
+      '/blog/':'/fr/blogue/',
+      '/privacy/':'/fr/confidentialite/'
+    };
+    var rev={};
+    for(var k in map) rev[map[k]]=k;
+    var p=window.location.pathname;
+    var isEn=!p.startsWith('/fr/');
+    var enUrl,frUrl;
+    if(isEn){enUrl='https://avenira.ai'+p;frUrl='https://avenira.ai'+(map[p]||'/fr/');}
+    else{frUrl='https://avenira.ai'+p;enUrl='https://avenira.ai'+(rev[p]||'/');}
+    var he=document.querySelector('link[hreflang="en"]');
+    var hf=document.querySelector('link[hreflang="fr"]');
+    var hd=document.querySelector('link[hreflang="x-default"]');
+    if(he)he.href=enUrl;if(hf)hf.href=frUrl;if(hd)hd.href=enUrl;
+    document.querySelectorAll('.lang-toggle').forEach(function(a){a.href=isEn?frUrl:enUrl;});
+  })();
+  </script>
   {{ghost_foot}}
 </body>
 </html>
