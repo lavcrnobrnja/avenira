@@ -16,3 +16,7 @@ content/logs/
 # IDE
 .vscode/
 .idea/
+avenira-theme.zip
+deploy-theme.py
+setup-ghost.py
+setup-nav.py

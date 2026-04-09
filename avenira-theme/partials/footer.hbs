@@ -1,0 +1,50 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="{{@site.url}}" class="logo">Avenira<span>.</span></a>
+        <p>{{t "footer_tagline"}}</p>
+      </div>
+      <div class="footer-col">
+        <h4>{{t "Services"}}</h4>
+        <ul>
+          <li><a href="{{@site.url}}/services/">{{t "Automation Audit"}}</a></li>
+          <li><a href="{{@site.url}}/services/">{{t "Workflow Build"}}</a></li>
+          <li><a href="{{@site.url}}/services/">{{t "Retainer"}}</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>{{t "Company"}}</h4>
+        <ul>
+          {{#match @site.locale "=" "en"}}
+            <li><a href="{{@site.url}}/about/">{{t "About"}}</a></li>
+            <li><a href="{{@site.url}}/grants/">{{t "Grants"}}</a></li>
+            <li><a href="{{@site.url}}/blog/">{{t "Blog"}}</a></li>
+          {{else}}
+            <li><a href="{{@site.url}}/a-propos/">{{t "About"}}</a></li>
+            <li><a href="{{@site.url}}/subventions/">{{t "Grants"}}</a></li>
+            <li><a href="{{@site.url}}/blogue/">{{t "Blog"}}</a></li>
+          {{/match}}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>{{t "Legal"}}</h4>
+        <ul>
+          {{#match @site.locale "=" "en"}}
+            <li><a href="{{@site.url}}/privacy/">{{t "Privacy Policy"}}</a></li>
+          {{else}}
+            <li><a href="{{@site.url}}/confidentialite/">{{t "Privacy Policy"}}</a></li>
+          {{/match}}
+          <li><a href="{{@site.url}}/contact/">{{t "Contact"}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; {{date format="YYYY"}} Avenira Automations. {{t "All rights reserved"}}.</span>
+      <div class="footer-contact">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:info@avenira.ai">info@avenira.ai</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,205 @@
+{{!< default}}
+
+{{!-- PAGE HERO --}}
+<section class="page-hero bg-pattern">
+  <div class="container">
+    {{#match @site.locale "=" "en"}}
+      <p class="section-label">Our Services</p>
+      <h1>From diagnosis to done — we handle the whole thing</h1>
+      <p>Three steps. One goal: your team spends less time on work that should run itself.</p>
+    {{else}}
+      <p class="section-label">Nos services</p>
+      <h1>Du diagnostic à l'implantation — on s'occupe de tout</h1>
+      <p>Trois étapes. Un objectif : votre équipe passe moins de temps sur du travail qui devrait rouler tout seul.</p>
+    {{/match}}
+  </div>
+</section>
+
+{{!-- SERVICE 1: Automation Audit --}}
+<section class="service-detail wash-blue">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-detail-content">
+        {{#match @site.locale "=" "en"}}
+          <p class="section-label">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Step 1
+          </p>
+          <h2>Automation Audit</h2>
+          <p class="hero-subtitle">Find out where you're bleeding time and money.</p>
+          <ul class="service-features">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Complete process map of your operations</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3–5 prioritized automation opportunities</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Time and cost estimates per opportunity</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Recommended implementation timeline</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Grant eligibility assessment</li>
+          </ul>
+          <p style="font-size:14px;color:var(--text-muted);margin-top:12px;">Timeline: Two weeks</p>
+          <div class="service-grant-note">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <span>Qualifies under ESSOR (up to 50% covered)</span>
+          </div>
+        {{else}}
+          <p class="section-label">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Étape 1
+          </p>
+          <h2>Audit d'automatisation</h2>
+          <p class="hero-subtitle">Découvrez où vous perdez du temps et de l'argent.</p>
+          <ul class="service-features">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Carte complète de vos processus</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3 à 5 opportunités d'automatisation priorisées</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Estimations de temps et de coûts par opportunité</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Calendrier de mise en œuvre recommandé</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Évaluation d'admissibilité aux subventions</li>
+          </ul>
+          <p style="font-size:14px;color:var(--text-muted);margin-top:12px;">Délai : Deux semaines</p>
+          <div class="service-grant-note">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <span>Admissible au programme ESSOR (jusqu'à 50% couvert)</span>
+          </div>
+        {{/match}}
+      </div>
+      <div class="service-visual service-visual-card service-visual-card-audit" aria-hidden="true">
+        <div class="service-visual-backdrop"></div>
+        <div class="service-visual-shell">
+          <svg class="service-visual-icon" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="51" cy="51" r="23"></circle>
+            <path d="M68 68L88 88"></path>
+            <path d="M51 39V63"></path>
+            <path d="M39 51H63"></path>
+          </svg>
+          <div class="service-visual-grid">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- SERVICE 2: Workflow Build --}}
+<section class="service-detail">
+  <div class="container">
+    <div class="service-detail-grid reverse">
+      <div class="service-detail-content">
+        {{#match @site.locale "=" "en"}}
+          <p class="section-label">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Step 2
+          </p>
+          <h2>Workflow Build</h2>
+          <p class="hero-subtitle">We build it. You run it. You own it.</p>
+          <ul class="service-features">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Custom workflow design &amp; architecture</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Integration with your existing tools</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Thorough testing &amp; quality assurance</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Team training &amp; documentation</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 30 days of post-launch support</li>
+          </ul>
+        {{else}}
+          <p class="section-label">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Étape 2
+          </p>
+          <h2>Construction de workflows</h2>
+          <p class="hero-subtitle">On le construit. Vous l'opérez. C'est à vous.</p>
+          <ul class="service-features">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Conception et architecture sur mesure</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Intégration avec vos outils existants</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Tests rigoureux et assurance qualité</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Formation de votre équipe et documentation</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 30 jours de support après le lancement</li>
+          </ul>
+        {{/match}}
+      </div>
+      <div class="service-visual service-visual-card service-visual-card-build" aria-hidden="true">
+        <div class="service-visual-backdrop"></div>
+        <div class="service-visual-shell">
+          <svg class="service-visual-icon" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="24" y="28" width="72" height="46" rx="10"></rect>
+            <path d="M42 89H78"></path>
+            <path d="M60 74V89"></path>
+            <path d="M38 48L51 59L82 40"></path>
+          </svg>
+          <div class="service-visual-bars">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- SERVICE 3: Automation Retainer --}}
+<section class="service-detail wash-blue">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-detail-content">
+        {{#match @site.locale "=" "en"}}
+          <p class="section-label">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Step 3
+          </p>
+          <h2>Automation Retainer</h2>
+          <p class="hero-subtitle">We keep it running and make it better.</p>
+          <ul class="service-features">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Continuous monitoring &amp; alerting</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Monthly performance reports</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Proactive maintenance &amp; updates</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> New workflow builds as needs evolve</li>
+          </ul>
+        {{else}}
+          <p class="section-label">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Étape 3
+          </p>
+          <h2>Forfait d'automatisation continue</h2>
+          <p class="hero-subtitle">On garde le tout en marche et on l'améliore.</p>
+          <ul class="service-features">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Surveillance continue et alertes</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Rapports mensuels de performance</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Maintenance proactive et mises à jour</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Support prioritaire</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Nouveaux workflows à mesure que vos besoins évoluent</li>
+          </ul>
+        {{/match}}
+      </div>
+      <div class="service-visual service-visual-card service-visual-card-retainer" aria-hidden="true">
+        <div class="service-visual-backdrop"></div>
+        <div class="service-visual-shell">
+          <svg class="service-visual-icon" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M83 43C78 33 69 27 58 27C42 27 29 40 29 56"></path>
+            <path d="M38 43L29 56L43 58"></path>
+            <path d="M37 77C42 87 51 93 62 93C78 93 91 80 91 64"></path>
+            <path d="M77 77L91 64L77 62"></path>
+            <circle cx="60" cy="60" r="9"></circle>
+          </svg>
+          <div class="service-visual-dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- CTA --}}
+<section class="cta-section bg-pattern">
+  <div class="container">
+    {{#match @site.locale "=" "en"}}
+      <h2>Ready to Get Started?</h2>
+      <p>Free 30-minute consultation. No commitment, no jargon.</p>
+      <div class="hero-actions">
+        <a href="{{@site.url}}/contact/" class="btn btn-primary">Book Your Free Call <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    {{else}}
+      <h2>Prêt à commencer?</h2>
+      <p>Consultation gratuite de 30 minutes. Sans engagement, sans jargon.</p>
+      <div class="hero-actions">
+        <a href="{{@site.url}}/contact/" class="btn btn-primary">Réserver votre appel gratuit <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    {{/match}}
+  </div>
+</section>

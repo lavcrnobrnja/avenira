@@ -1,0 +1,53 @@
+{{!< default}}
+
+<article class="blog-post">
+
+  {{!-- Post header --}}
+  <section class="page-hero bg-pattern">
+    <div class="container">
+      {{#primary_tag}}
+        <p class="section-label">{{name}}</p>
+      {{/primary_tag}}
+      <h1>{{title}}</h1>
+      <p class="post-meta">
+        <span>{{date format="MMMM D, YYYY"}}</span>
+        {{#if reading_time}}
+          <span>&middot; {{reading_time}} {{t "min read"}}</span>
+        {{/if}}
+      </p>
+    </div>
+  </section>
+
+  {{!-- Feature image --}}
+  {{#if feature_image}}
+    <div class="post-feature-image">
+      <div class="container">
+        <img src="{{feature_image}}" alt="{{title}}" style="width:100%;max-width:720px;display:block;margin:0 auto;border-radius:12px;">
+      </div>
+    </div>
+  {{/if}}
+
+  {{!-- Post content --}}
+  <section class="section">
+    <div class="container">
+      <div class="gh-content">
+        {{content}}
+      </div>
+    </div>
+  </section>
+
+  {{!-- Post navigation --}}
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--border-color);padding-top:32px;">
+        {{#prev_post}}
+          <a href="{{url}}" class="btn btn-secondary">← {{title}}</a>
+        {{/prev_post}}
+        {{#next_post}}
+          <a href="{{url}}" class="btn btn-secondary" style="margin-left:auto;">{{title}} →</a>
+        {{/next_post}}
+      </div>
+    </div>
+  </section>
+
+</article>

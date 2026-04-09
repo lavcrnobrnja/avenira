@@ -1,0 +1,15 @@
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-inner">
+    <p class="cookie-text">{{t "cookie_text"}}
+      {{#match @site.locale "=" "en"}}
+        <a href="{{@site.url}}/privacy/">{{t "Privacy Policy"}}</a>
+      {{else}}
+        <a href="{{@site.url}}/confidentialite/">{{t "Privacy Policy"}}</a>
+      {{/match}}
+    </p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-accept" id="cookie-accept">{{t "Accept"}}</button>
+      <button class="cookie-btn cookie-decline" id="cookie-decline">{{t "Decline"}}</button>
+    </div>
+  </div>
+</div>

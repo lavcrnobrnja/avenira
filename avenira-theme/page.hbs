@@ -1,0 +1,19 @@
+{{!< default}}
+
+{{!-- Default page template (fallback) --}}
+<section class="page-hero bg-pattern">
+  <div class="container">
+    <h1>{{title}}</h1>
+    {{#if custom_excerpt}}
+      <p>{{custom_excerpt}}</p>
+    {{/if}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="gh-content">
+      {{content}}
+    </div>
+  </div>
+</section>

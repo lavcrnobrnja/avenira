@@ -1,0 +1,30 @@
+{
+  "name": "avenira-theme",
+  "description": "Official Ghost theme for Avenira Automations — bilingual EN/FR business website.",
+  "version": "1.0.1",
+  "engines": {
+    "ghost": ">=6.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Avenira Automations",
+    "email": "info@avenira.ai"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "bilingual"
+  ],
+  "config": {
+    "posts_per_page": 9,
+    "image_sizes": {
+      "xxs": { "width": 30 },
+      "xs": { "width": 100 },
+      "s": { "width": 300 },
+      "m": { "width": 600 },
+      "l": { "width": 1000 },
+      "xl": { "width": 2000 }
+    },
+    "card_assets": true
+  }
+}

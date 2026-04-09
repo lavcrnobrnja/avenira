@@ -1,0 +1,75 @@
+{{!< default}}
+
+{{!-- Blog listing page --}}
+<section class="page-hero bg-pattern">
+  <div class="container">
+    {{#match @site.locale "=" "en"}}
+      <p class="section-label">Blog</p>
+      <h1>Insights on Business Automation</h1>
+      <p>Practical guides, real case studies, and industry insights for Quebec business owners.</p>
+    {{else}}
+      <p class="section-label">Blogue</p>
+      <h1>Perspectives sur l'automatisation des affaires</h1>
+      <p>Guides pratiques, études de cas réels et perspectives sectorielles pour les chefs d'entreprise québécois.</p>
+    {{/match}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    {{!-- Tag filter pills (link-based, no JS filtering) --}}
+    <div class="blog-categories">
+      {{#match @site.locale "=" "en"}}
+        <a href="{{@site.url}}/blog/" class="blog-cat-btn {{#unless tag}}active{{/unless}}">{{t "All"}}</a>
+      {{else}}
+        <a href="{{@site.url}}/blogue/" class="blog-cat-btn {{#unless tag}}active{{/unless}}">{{t "All"}}</a>
+      {{/match}}
+      {{#get "tags" limit="all"}}
+        {{#foreach tags}}
+          <a href="{{url}}" class="blog-cat-btn">{{name}}</a>
+        {{/foreach}}
+      {{/get}}
+    </div>
+
+    {{!-- Posts grid --}}
+    <div class="blog-grid">
+      {{#foreach posts}}
+        <article class="blog-card">
+          {{#if feature_image}}
+            <div class="blog-card-img" style="background-image:url({{feature_image}});background-size:cover;background-position:center;"></div>
+          {{else}}
+            <div class="blog-card-img">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+          {{/if}}
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              {{#primary_tag}}
+                <span class="blog-card-tag">{{name}}</span>
+              {{/primary_tag}}
+              <span>{{date format="MMMM YYYY"}}</span>
+            </div>
+            <h3><a href="{{url}}">{{title}}</a></h3>
+            <p>{{excerpt words="20"}}</p>
+            <a href="{{url}}" class="service-link">{{t "Read more"}} <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </article>
+      {{/foreach}}
+    </div>
+
+    {{!-- Pagination --}}
+    {{#if pagination}}
+      <nav class="pagination" aria-label="Post navigation">
+        {{#if prev}}
+          <a href="{{prev.url}}" class="btn btn-secondary">{{t "Newer Posts"}}</a>
+        {{/if}}
+        <span class="pagination-info">{{t "Page {page} of {pages}" page=pagination.page pages=pagination.pages}}</span>
+        {{#if next}}
+          <a href="{{next.url}}" class="btn btn-secondary">{{t "Older Posts"}}</a>
+        {{/if}}
+      </nav>
+    {{/if}}
+
+  </div>
+</section>

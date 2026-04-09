@@ -1,0 +1,11 @@
+routes:
+  /: custom-home
+
+collections:
+  /blogue/:
+    permalink: /blogue/{slug}/
+    template: index
+
+taxonomies:
+  tag: /etiquette/{slug}/
+  author: /auteur/{slug}/

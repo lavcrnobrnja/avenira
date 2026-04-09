@@ -1,0 +1,32 @@
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="{{@site.url}}" class="logo">Avenira<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="{{t "Open menu"}}">
+        <svg class="icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="{{@site.url}}/">{{t "Home"}}</a></li>
+        <li><a href="{{@site.url}}/services/">{{t "Services"}}</a></li>
+        {{#match @site.locale "=" "en"}}
+          <li><a href="{{@site.url}}/grants/">{{t "Grants"}}</a></li>
+          <li><a href="{{@site.url}}/about/">{{t "About"}}</a></li>
+          <li><a href="{{@site.url}}/blog/">{{t "Blog"}}</a></li>
+        {{else}}
+          <li><a href="{{@site.url}}/subventions/">{{t "Grants"}}</a></li>
+          <li><a href="{{@site.url}}/a-propos/">{{t "About"}}</a></li>
+          <li><a href="{{@site.url}}/blogue/">{{t "Blog"}}</a></li>
+        {{/match}}
+        <li><a href="{{@site.url}}/contact/">{{t "Contact"}}</a></li>
+        <li>
+          {{#match @site.locale "=" "en"}}
+            <a href="https://avenira.ai/fr/" class="lang-toggle"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> FR</a>
+          {{else}}
+            <a href="https://avenira.ai/" class="lang-toggle"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> EN</a>
+          {{/match}}
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

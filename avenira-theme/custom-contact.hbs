@@ -1,0 +1,112 @@
+{{!< default}}
+
+{{!-- PAGE HERO --}}
+<section class="page-hero bg-pattern">
+  <div class="container">
+    {{#match @site.locale "=" "en"}}
+      <p class="section-label">Get in Touch</p>
+      <h1>Let's Start With a Conversation</h1>
+      <p>Free 30-minute consultation. No commitment, no jargon — just a clear look at where automation would make the biggest difference.</p>
+    {{else}}
+      <p class="section-label">Contactez-nous</p>
+      <h1>Commençons par une conversation</h1>
+      <p>Consultation gratuite de 30 minutes. Sans engagement, sans jargon — juste un regard clair sur l'endroit où l'automatisation ferait la plus grande différence.</p>
+    {{/match}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-form-wrap">
+        <form id="contact-form" action="https://formspree.io/f/PLACEHOLDER" method="POST" novalidate>
+          <div class="form-group">
+            {{#match @site.locale "=" "en"}}
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            {{else}}
+              <label for="name">Nom</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            {{/match}}
+          </div>
+          <div class="form-group">
+            {{#match @site.locale "=" "en"}}
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+            {{else}}
+              <label for="email">Courriel</label>
+              <input type="email" id="email" name="email" placeholder="vous@entreprise.com" required>
+            {{/match}}
+          </div>
+          <div class="form-group">
+            {{#match @site.locale "=" "en"}}
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Your company name">
+            {{else}}
+              <label for="company">Entreprise</label>
+              <input type="text" id="company" name="company" placeholder="Nom de votre entreprise">
+            {{/match}}
+          </div>
+          <div class="form-group">
+            {{#match @site.locale "=" "en"}}
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your business and what you'd like to automate..." rows="5" required></textarea>
+            {{else}}
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Parlez-nous de votre entreprise et de ce que vous aimeriez automatiser..." rows="5" required></textarea>
+            {{/match}}
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">
+            {{t "Send Message"}}
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-info-block">
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:info@avenira.ai">info@avenira.ai</a></p>
+          </div>
+        </div>
+        <div class="contact-info-block">
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            {{#match @site.locale "=" "en"}}
+              <h4>Location</h4>
+              <p>Montreal, Quebec</p>
+            {{else}}
+              <h4>Lieu</h4>
+              <p>Montréal, Québec</p>
+            {{/match}}
+          </div>
+        </div>
+        <div class="contact-info-block">
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            {{#match @site.locale "=" "en"}}
+              <h4>Availability</h4>
+              <p>Monday — Friday, 9am — 5pm ET</p>
+            {{else}}
+              <h4>Disponibilité</h4>
+              <p>Lundi — vendredi, 9h — 17h HE</p>
+            {{/match}}
+          </div>
+        </div>
+        {{#match @site.locale "=" "en"}}
+          <p class="contact-note">We work across Quebec, in-person and remotely.</p>
+        {{else}}
+          <p class="contact-note">On travaille partout au Québec, en personne et à distance.</p>
+        {{/match}}
+      </div>
+    </div>
+  </div>
+</section>

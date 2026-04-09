@@ -1,0 +1,177 @@
+{{!< default}}
+
+{{!-- PAGE HERO --}}
+<section class="page-hero bg-pattern">
+  <div class="container">
+    {{#match @site.locale "=" "en"}}
+      <p class="section-label">About Us</p>
+      <h1>Built From Experience, Not Theory</h1>
+      <p>We automated our own businesses first. Now we do it for yours.</p>
+    {{else}}
+      <p class="section-label">À propos</p>
+      <h1>Bâti sur l'expérience, pas la théorie</h1>
+      <p>On a d'abord automatisé nos propres entreprises. Maintenant, on le fait pour la vôtre.</p>
+    {{/match}}
+  </div>
+</section>
+
+{{!-- STORY --}}
+<section class="about-story">
+  <div class="container">
+    <div class="text-center">
+      {{#match @site.locale "=" "en"}}
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title">We automated our own businesses first</h2>
+        <p style="max-width:640px;margin:24px auto 0;font-size:1.0625rem;color:var(--text-secondary);line-height:1.8;">We know what operational drag looks like because we've lived it. Too many handoffs. Too much time lost to routine work. Avenira exists to fix that — with practical systems that make businesses run better.</p>
+      {{else}}
+        <p class="section-label">Notre histoire</p>
+        <h2 class="section-title">On a d'abord automatisé nos propres entreprises</h2>
+        <p style="max-width:640px;margin:24px auto 0;font-size:1.0625rem;color:var(--text-secondary);line-height:1.8;">On sait c'est quoi la friction opérationnelle parce qu'on l'a vécue. Trop de transferts. Trop de temps perdu sur des tâches de routine. Avenira existe pour régler ça — avec des systèmes concrets qui font mieux rouler les entreprises.</p>
+      {{/match}}
+    </div>
+  </div>
+</section>
+
+{{!-- FOUNDERS --}}
+<section class="section wash-blue">
+  <div class="container">
+    <div class="text-center">
+      {{#match @site.locale "=" "en"}}
+        <p class="section-label">The Team</p>
+        <h2 class="section-title">Meet the Founders</h2>
+        <p class="section-subtitle">Over 20 years in tech — cloud, web/mobile dev, and applied automation.</p>
+      {{else}}
+        <p class="section-label">L'équipe</p>
+        <h2 class="section-title">Les fondateurs</h2>
+        <p class="section-subtitle">Plus de 20 ans en techno — infonuagique, développement web/mobile et automatisation appliquée.</p>
+      {{/match}}
+    </div>
+    <div class="founders-stage">
+      <div class="founders-grid">
+        <div class="founder-card">
+          <div class="founder-avatar-placeholder" aria-hidden="true" style="width:80px;height:80px;border-radius:50%;background:var(--color-blue);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#fff;margin:0 auto 16px;">LC</div>
+          <h3>Lav Crnobrnja</h3>
+          {{#match @site.locale "=" "en"}}
+            <p class="role">Co-Founder</p>
+            <p>Built and scaled SaaS products serving thousands of businesses.</p>
+          {{else}}
+            <p class="role">Cofondateur</p>
+            <p>A bâti et fait croître des produits SaaS utilisés par des milliers d'entreprises.</p>
+          {{/match}}
+        </div>
+        <div class="founder-card">
+          <div class="founder-avatar-placeholder" aria-hidden="true" style="width:80px;height:80px;border-radius:50%;background:var(--color-blue);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#fff;margin:0 auto 16px;">AK</div>
+          <h3>Arfanuddin Khan</h3>
+          {{#match @site.locale "=" "en"}}
+            <p class="role">Co-Founder</p>
+            <p>Deep expertise in process optimization and system integration.</p>
+          {{else}}
+            <p class="role">Cofondateur</p>
+            <p>Expertise approfondie en optimisation de processus et intégration de systèmes.</p>
+          {{/match}}
+        </div>
+      </div>
+      <div class="founders-proof-panel">
+        <div class="founders-proof-kicker">
+          {{#match @site.locale "=" "en"}}Shared track record{{else}}Bilan commun{{/match}}
+        </div>
+        <div class="founders-proof-main">
+          <span class="founders-proof-number">20+</span>
+          <div class="founders-proof-copy">
+            {{#match @site.locale "=" "en"}}
+              <strong>Years operating in the real world</strong>
+              <span>Cloud delivery, web and mobile products, systems integration, and practical automation.</span>
+            {{else}}
+              <strong>Années à opérer dans le vrai monde</strong>
+              <span>Livraison infonuagique, produits web et mobile, intégration de systèmes et automatisation pratique.</span>
+            {{/match}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- APPROACH --}}
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      {{#match @site.locale "=" "en"}}
+        <p class="section-label">Our Approach</p>
+        <h2 class="section-title">Practical by design</h2>
+      {{else}}
+        <p class="section-label">Notre approche</p>
+        <h2 class="section-title">Concret par design</h2>
+      {{/match}}
+    </div>
+    <div class="approach-grid">
+      <div class="approach-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        {{#match @site.locale "=" "en"}}
+          <span>Business problem first. We understand your operations before touching any technology.</span>
+        {{else}}
+          <span>Le problème d'affaires d'abord. On comprend vos opérations avant de toucher à la technologie.</span>
+        {{/match}}
+      </div>
+      <div class="approach-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        {{#match @site.locale "=" "en"}}
+          <span>Standard tools, no lock-in. We build on proven platforms your team can maintain.</span>
+        {{else}}
+          <span>Outils standards, aucun verrouillage. On bâtit sur des plateformes éprouvées que votre équipe peut gérer.</span>
+        {{/match}}
+      </div>
+      <div class="approach-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        {{#match @site.locale "=" "en"}}
+          <span>Start small, prove value. We pick the highest-ROI automation first and expand from there.</span>
+        {{else}}
+          <span>Commencer petit, prouver la valeur. On cible l'automatisation au meilleur rendement d'abord.</span>
+        {{/match}}
+      </div>
+      <div class="approach-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        {{#match @site.locale "=" "en"}}
+          <span>We handle grant applications so you pay less out of pocket.</span>
+        {{else}}
+          <span>On s'occupe des demandes de subventions pour réduire vos coûts.</span>
+        {{/match}}
+      </div>
+      <div class="approach-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        {{#match @site.locale "=" "en"}}
+          <span>We train your team. No dependency — we build capability.</span>
+        {{else}}
+          <span>On forme votre équipe. Pas de dépendance — on développe vos capacités.</span>
+        {{/match}}
+      </div>
+      <div class="approach-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        {{#match @site.locale "=" "en"}}
+          <span>We measure and optimize. Track time saved and refine to maximize ROI.</span>
+        {{else}}
+          <span>On mesure et on optimise. Suivi du temps sauvé et ajustements pour maximiser le rendement.</span>
+        {{/match}}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- CTA --}}
+<section class="cta-section bg-pattern">
+  <div class="container">
+    {{#match @site.locale "=" "en"}}
+      <h2>Let's Talk About Your Business</h2>
+      <p>Free 30-minute consultation. No commitment, no jargon.</p>
+      <div class="hero-actions">
+        <a href="{{@site.url}}/contact/" class="btn btn-primary">Book Your Free Call <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    {{else}}
+      <h2>Parlons de votre entreprise</h2>
+      <p>Consultation gratuite de 30 minutes. Sans engagement, sans jargon.</p>
+      <div class="hero-actions">
+        <a href="{{@site.url}}/contact/" class="btn btn-primary">Réserver votre appel gratuit <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    {{/match}}
+  </div>
+</section>
