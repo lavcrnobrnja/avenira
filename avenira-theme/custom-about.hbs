@@ -15,23 +15,6 @@
   </div>
 </section>
 
-{{!-- STORY --}}
-<section class="about-story">
-  <div class="container">
-    <div class="text-center">
-      {{#match @site.locale "=" "en"}}
-        <p class="section-label">Our Story</p>
-        <h2 class="section-title">We automated our own businesses first</h2>
-        <p style="max-width:640px;margin:24px auto 0;font-size:1.0625rem;color:var(--text-secondary);line-height:1.8;">We know what operational drag looks like because we've lived it. Too many handoffs. Too much time lost to routine work. Avenira exists to fix that — with practical systems that make businesses run better.</p>
-      {{else}}
-        <p class="section-label">Notre histoire</p>
-        <h2 class="section-title">On a d'abord automatisé nos propres entreprises</h2>
-        <p style="max-width:640px;margin:24px auto 0;font-size:1.0625rem;color:var(--text-secondary);line-height:1.8;">On sait c'est quoi la friction opérationnelle parce qu'on l'a vécue. Trop de transferts. Trop de temps perdu sur des tâches de routine. Avenira existe pour régler ça — avec des systèmes concrets qui font mieux rouler les entreprises.</p>
-      {{/match}}
-    </div>
-  </div>
-</section>
-
 {{!-- FOUNDERS --}}
 <section class="section wash-blue">
   <div class="container">
@@ -49,7 +32,7 @@
     <div class="founders-stage">
       <div class="founders-grid">
         <div class="founder-card">
-          <div class="founder-avatar-placeholder" aria-hidden="true" style="width:80px;height:80px;border-radius:50%;background:var(--color-blue);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#fff;margin:0 auto 16px;">LC</div>
+          <img src="{{asset "images/avatar-lav.jpeg"}}" alt="Lav Crnobrnja" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 16px;display:block;">
           <h3>Lav Crnobrnja</h3>
           {{#match @site.locale "=" "en"}}
             <p class="role">Co-Founder</p>
@@ -60,7 +43,7 @@
           {{/match}}
         </div>
         <div class="founder-card">
-          <div class="founder-avatar-placeholder" aria-hidden="true" style="width:80px;height:80px;border-radius:50%;background:var(--color-blue);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#fff;margin:0 auto 16px;">AK</div>
+          <img src="{{asset "images/avatar-arfan.jpeg"}}" alt="Arfanuddin Khan" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 16px;display:block;">
           <h3>Arfanuddin Khan</h3>
           {{#match @site.locale "=" "en"}}
             <p class="role">Co-Founder</p>
