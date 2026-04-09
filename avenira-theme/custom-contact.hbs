@@ -19,7 +19,7 @@
   <div class="container">
     <div class="contact-grid">
       <div class="contact-form-wrap">
-        <form id="contact-form" action="https://formspree.io/f/PLACEHOLDER" method="POST" novalidate>
+        <form id="contact-form" action="https://formspree.io/f/xdaprogd" method="POST" novalidate>
           <div class="form-group">
             {{#match @site.locale "=" "en"}}
               <label for="name">Name</label>
@@ -45,6 +45,15 @@
             {{else}}
               <label for="company">Entreprise</label>
               <input type="text" id="company" name="company" placeholder="Nom de votre entreprise">
+            {{/match}}
+          </div>
+          <div class="form-group">
+            {{#match @site.locale "=" "en"}}
+              <label for="phone">Phone <span style="color:var(--text-muted);font-weight:400;">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="(514) 555-0100">
+            {{else}}
+              <label for="phone">Téléphone <span style="color:var(--text-muted);font-weight:400;">(optionnel)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="(514) 555-0100">
             {{/match}}
           </div>
           <div class="form-group">

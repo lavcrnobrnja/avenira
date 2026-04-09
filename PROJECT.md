@@ -29,25 +29,32 @@ Static HTML/CSS/JS mockup → Ghost theme on two Ghost instances (EN + FR) behin
 
 ## Key paths
 - `projects/avenira/avenira-website-specification.md` — full spec (brand, copy, structure, bilingual rules)
-- `projects/avenira/mockup/` — all HTML/CSS/JS files
-- `projects/avenira/mockup/img/` — generated images (hero-illustration.png)
-- `projects/avenira/mockup/css/style.css` — single stylesheet
-- `projects/avenira/research/ghost-theme-research.md`
-- `design-system/avenira-automations/MASTER.md`
+- `projects/avenira/avenira-theme/` — Ghost Handlebars theme (deployed)
+- `projects/avenira/mockup/` — original HTML/CSS/JS mockup files
 - `projects/avenira/copy-rewrite.md` — copy deck reference from GPT-5.4 rewrite
+- `projects/avenira/research/ghost-theme-research.md`
 
 ## Pages (10 total)
 EN: `index.html`, `about.html`, `services.html`, `grants.html`, `contact.html`
 FR: `fr/index.html`, `fr/a-propos.html`, `fr/services.html`, `fr/subventions.html`, `fr/contact.html`
 
-## Current state (Apr 9, ~17:38 EDT)
+## Current state (Apr 9, ~18:10 EDT)
 - **Card 1** (Ghost theme research): ✅ Done
 - **Card 2** (Design System + HTML Mockup): ✅ Approved
 - **Card 271** (Copy rewrite): ✅ Done
 - **Card 272** (Visuals): ✅ Done
-- **Card 3** (Server setup): ✅ Done — Ghost EN (:2370) + FR (:2371), nginx /fr/ path routing, SSL certbot (expires 2026-07-08), admin accounts created, API integrations (Admin+Content keys) created and verified, locale/title/description/timezone configured, all 6 redirect chains correct, all credentials on Trello info card #263
-- **Card 4** (HTML → Ghost Theme): Next up
-- **Card 5** (QA): After Card 4
+- **Card 3** (Server setup): ✅ Done
+- **Card 4** (HTML → Ghost Theme): ✅ Done — v1.0.1 deployed to both instances
+  - 21 theme files, custom templates for all 6 pages + blog
+  - Bilingual via {{@site.locale}} + {{#match}} blocks
+  - Locale-aware nav with French slugs (subventions, a-propos, blogue, confidentialite)
+  - routes.yaml deployed (EN: /blog/, FR: /blogue/)
+  - All 12 pages created and returning 200
+  - All 10 tags created (5 EN + 5 FR)
+  - Formspree contact form (PLACEHOLDER — Lav setting up account)
+  - Cookie consent, hreflang tags, Koenig CSS classes all working
+  - Ghost navigation NOT set via DB (mysql root pw unknown) — header/footer hardcoded in theme, works fine
+- **Card 5** (QA): Next up
 - **Card 6** (Initial Blog Posts): After Card 5
 
 ## Key decisions
@@ -63,5 +70,31 @@ FR: `fr/index.html`, `fr/a-propos.html`, `fr/services.html`, `fr/subventions.htm
 - Copy: "Built From Experience, Not Theory" is sacred — Lav's favorite line, never change it.
 - Founders: Lav Crnobrnja + Arfanuddin Khan (NOT Slobodan).
 
+## Theme structure
+```
+avenira-theme/
+├─ default.hbs              # Base layout
+├─ custom-home.hbs          # Homepage (362 lines)
+├─ custom-services.hbs      # Services page
+├─ custom-grants.hbs        # Grants page
+├─ custom-about.hbs         # About page
+├─ custom-contact.hbs       # Contact (Formspree)
+├─ custom-privacy.hbs       # Privacy policy
+├─ index.hbs / post.hbs / tag.hbs / page.hbs  # Blog templates
+├─ partials/ (header, footer, cookie-banner)
+├─ locales/ (en.json, fr.json — 38 UI strings each)
+├─ assets/css/screen.css    # Full stylesheet (1855 lines)
+├─ assets/js/main.js        # Nav, cookies, scroll
+├─ assets/images/hero-illustration.png
+├─ routes.yaml              # EN routing
+└─ routes-fr.yaml           # FR routing
+```
+
+## Deploy process
+1. Make changes in avenira-theme/
+2. Zip: `cd avenira-theme && zip -r ../avenira-theme.zip . -x routes-fr.yaml`
+3. Deploy: `python3 deploy-theme.py` (uploads + activates on both instances)
+4. If routes change: SCP to server + restart Ghost services
+
 ## Next step
-Card 4: HTML → Ghost Theme Conversion
+Card 5: QA

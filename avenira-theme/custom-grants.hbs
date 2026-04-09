@@ -21,8 +21,21 @@
   </div>
 </section>
 
+{{!-- INTRO --}}
+<section class="section">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto;text-align:center;">
+      {{#match @site.locale "=" "en"}}
+        <p style="font-size:1.0625rem;color:var(--text-secondary);line-height:1.8;">Most Quebec businesses don't know that provincial and federal programs exist specifically to fund automation and digital transformation projects. Two out of three SMBs miss out simply because they've never heard of these programs. We help you find the right programs, prepare strong applications, and maximize your funding.</p>
+      {{else}}
+        <p style="font-size:1.0625rem;color:var(--text-secondary);line-height:1.8;">La plupart des entreprises québécoises ne savent pas que des programmes provinciaux et fédéraux existent spécifiquement pour financer les projets d'automatisation et de transformation numérique. Deux PME sur trois passent à côté simplement parce qu'elles n'ont jamais entendu parler de ces programmes. Nous vous aidons à trouver les bons programmes, préparer des demandes solides et maximiser votre financement.</p>
+      {{/match}}
+    </div>
+  </div>
+</section>
+
 {{!-- GRANTS LIST --}}
-<section class="section wash-green">
+<section class="section wash-green" style="padding-top:0;">
   <div class="container">
     <div class="text-center" style="margin-bottom:12px;">
       {{#match @site.locale "=" "en"}}
@@ -120,6 +133,15 @@
           <div class="grant-badge">Spécifique à Montréal</div>
         {{/match}}
       </div>
+    </div>
+
+    {{!-- Important Note --}}
+    <div style="margin-top:32px;padding:20px 24px;background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.12);border-radius:12px;">
+      {{#match @site.locale "=" "en"}}
+        <p style="font-size:0.9375rem;color:var(--text-secondary);margin:0;line-height:1.7;"><strong style="color:var(--text-primary);">Note:</strong> Grant programs change regularly. Eligibility depends on your specific situation. We research the current landscape for every client and identify the best opportunities. This page reflects programs available as of 2026 and is updated regularly.</p>
+      {{else}}
+        <p style="font-size:0.9375rem;color:var(--text-secondary);margin:0;line-height:1.7;"><strong style="color:var(--text-primary);">Note :</strong> Les programmes de subventions changent régulièrement. L'admissibilité dépend de votre situation spécifique. Nous analysons le paysage actuel pour chaque client et identifions les meilleures opportunités. Cette page reflète les programmes disponibles en 2026 et est mise à jour régulièrement.</p>
+      {{/match}}
     </div>
 
     {{!-- How We Help --}}
