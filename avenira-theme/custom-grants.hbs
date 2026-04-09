@@ -22,7 +22,7 @@
 </section>
 
 {{!-- INTRO --}}
-<section class="section">
+<section class="section" style="padding-top:40px;padding-bottom:40px;">
   <div class="container">
     <div style="max-width:720px;margin:0 auto;text-align:center;">
       {{#match @site.locale "=" "en"}}
@@ -35,15 +35,15 @@
 </section>
 
 {{!-- GRANTS LIST --}}
-<section class="section wash-green" style="padding-top:0;">
+<section class="section wash-green" style="padding-top:60px;">
   <div class="container">
     <div class="text-center" style="margin-bottom:12px;">
       {{#match @site.locale "=" "en"}}
         <h2 class="section-title">Available Programs</h2>
-        <p class="section-subtitle">Five programs that can fund your automation project.</p>
+        <p class="section-subtitle">Four programs that can fund your automation project.</p>
       {{else}}
         <h2 class="section-title">Programmes disponibles</h2>
-        <p class="section-subtitle">Cinq programmes qui peuvent financer votre projet d'automatisation.</p>
+        <p class="section-subtitle">Quatre programmes qui peuvent financer votre projet d'automatisation.</p>
       {{/match}}
     </div>
 
@@ -99,23 +99,7 @@
           <div class="grant-badge">Crédit de 30%</div>
         {{/match}}
       </div>
-      {{!-- Plan PME --}}
-      <div class="grant-card">
-        <div class="grant-initial">P</div>
-        <div class="grant-info">
-          <h3>Plan PME</h3>
-          {{#match @site.locale "=" "en"}}
-            <p>$494M government investment in Quebec SMBs. Productivity, optimization, and digital adoption.</p>
-          {{else}}
-            <p>494M$ d'investissement gouvernemental dans les PME québécoises. Productivité, optimisation et adoption numérique.</p>
-          {{/match}}
-        </div>
-        {{#match @site.locale "=" "en"}}
-          <div class="grant-badge">$494M program</div>
-        {{else}}
-          <div class="grant-badge">Programme de 494M$</div>
-        {{/match}}
-      </div>
+
       {{!-- PME MTL --}}
       <div class="grant-card">
         <div class="grant-initial">M</div>

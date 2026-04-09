@@ -70,6 +70,22 @@
     }
   }
 
+  // --- Active nav indicator ---
+  (function () {
+    var path = window.location.pathname.replace(/\/$/, '') || '/';
+    var links = document.querySelectorAll('.nav-links a:not(.lang-toggle)');
+    links.forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (!href) return;
+      try {
+        var linkPath = new URL(href, window.location.origin).pathname.replace(/\/$/, '') || '/';
+        if (path === linkPath) {
+          link.setAttribute('aria-current', 'page');
+        }
+      } catch (e) { /* ignore */ }
+    });
+  })();
+
   // --- Scroll header shadow ---
   var header = document.querySelector('.site-header');
   if (header) {
