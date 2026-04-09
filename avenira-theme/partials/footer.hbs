@@ -41,10 +41,7 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; {{date format="YYYY"}} Avenira Automations. {{t "All rights reserved"}}.</span>
-      <div class="footer-contact">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <a href="mailto:info@avenira.ai">info@avenira.ai</a>
-      </div>
+
       {{#match @site.locale "=" "en"}}
         <a href="https://avenira.ai/fr/" class="lang-toggle" style="margin-left:16px;"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> FR</a>
       {{else}}
