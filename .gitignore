@@ -1,0 +1,18 @@
+# Environment
+.env
+*.plist
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Ghost
+content/data/
+content/logs/
+
+# IDE
+.vscode/
+.idea/
