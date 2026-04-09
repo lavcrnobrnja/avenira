@@ -3,7 +3,23 @@
 Bilingual Ghost marketing site for avenira.ai, targeting Quebec SMB automation consulting.
 
 ## Stack
-Static HTML/CSS/JS mockup now, then Ghost theme on two Ghost instances (EN + FR) behind one domain with nginx path routing (`/fr/`).
+Static HTML/CSS/JS mockup → Ghost theme on two Ghost instances (EN + FR) behind one domain with nginx path routing (`/fr/`).
+
+## Server
+- **EN Ghost:** https://avenira.ai/ → :2370 (MariaDB: ghost_avenira_en)
+- **FR Ghost:** https://avenira.ai/fr/ → :2371 (MariaDB: ghost_avenira_fr)
+- **Ghost version:** 6.27.0
+- **Server:** 98.92.64.101 (same as DraftSpring, YouOnPTO, blog)
+- **Services:** ghost_avenira-ai, ghost_avenira-ai-fr
+- **Nginx:** /etc/nginx/sites-available/avenira.ai.conf
+- **SSL:** certbot, expires 2026-07-08, covers avenira.ai + www.avenira.ai
+- **EN install path:** /var/www/avenira.ai/
+- **FR install path:** /var/www/avenira.ai-fr/
+- **Ghost admin setup:** https://avenira.ai/ghost/#/setup (EN), https://avenira.ai/fr/ghost/#/setup (FR)
+
+## Git
+- **Repo:** https://github.com/lavcrnobrnja/avenira
+- **Local:** /workspace/projects/avenira/
 
 ## Key paths
 - `projects/avenira/avenira-website-specification.md` — full spec (brand, copy, structure, bilingual rules)
@@ -18,12 +34,13 @@ Static HTML/CSS/JS mockup now, then Ghost theme on two Ghost instances (EN + FR)
 EN: `index.html`, `about.html`, `services.html`, `grants.html`, `contact.html`
 FR: `fr/index.html`, `fr/a-propos.html`, `fr/services.html`, `fr/subventions.html`, `fr/contact.html`
 
-## Current state (Apr 9, ~17:00 EDT)
+## Current state (Apr 9, ~17:20 EDT)
 - **Card 1** (Ghost theme research): ✅ Done
-- **Card 2** (Design System + HTML Mockup): ✅ Approved — multiple redesign rounds (nav, pain points, service visuals, founders block, industries, approach items)
-- **Card 271** (Copy rewrite): ✅ Done — full copy rewrite across all 10 pages, 2 rounds of fixes (pain points h2/lead restored, about story centered with heading, services hero rewritten, emdash purge, closing paragraph tightened)
-- **Card 272** (Visuals): ✅ Done — hero illustration replaced with NB2-generated before/after workflow diagram (`img/hero-illustration.png`), grant banner 50% pie chart replaced with stacked grant program cards (ESSOR/OTN/CRIC/PME MTL). Browser-verified.
-- **Card 3** (Server setup): Next up — Ghost instances, nginx, SSL
+- **Card 2** (Design System + HTML Mockup): ✅ Approved
+- **Card 271** (Copy rewrite): ✅ Done
+- **Card 272** (Visuals): ✅ Done
+- **Card 3** (Server setup): ✅ Done — Ghost EN (:2370) + FR (:2371), nginx with /fr/ path routing, SSL via certbot (expires 2026-07-08), systemd services, MariaDB databases
+- **Card 4** (HTML → Ghost Theme): Next up
 
 ## Key decisions
 - Hero illustration is a generated PNG (`img/hero-illustration.png`), same image EN+FR (no text in image). FR path uses `../img/hero-illustration.png`.
@@ -39,4 +56,4 @@ FR: `fr/index.html`, `fr/a-propos.html`, `fr/services.html`, `fr/subventions.htm
 - Founders: Lav Crnobrnja + Arfanuddin Khan (NOT Slobodan).
 
 ## Next step
-Card 3: Server setup — Ghost instances, nginx, SSL, domain config.
+Card 4: HTML → Ghost Theme Conversion
