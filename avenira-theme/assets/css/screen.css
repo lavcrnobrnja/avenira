@@ -631,12 +631,12 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
 }
 
-.hero-content h1 { margin-bottom: 20px; }
+.hero-content h1 { margin-bottom: 28px; }
 
 .hero-subtitle {
   font-size: 1.125rem;
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   max-width: 500px;
   line-height: 1.7;
 }
