@@ -38,24 +38,17 @@ Static HTML/CSS/JS mockup → Ghost theme on two Ghost instances (EN + FR) behin
 EN: `index.html`, `about.html`, `services.html`, `grants.html`, `contact.html`
 FR: `fr/index.html`, `fr/a-propos.html`, `fr/services.html`, `fr/subventions.html`, `fr/contact.html`
 
-## Current state (Apr 9, ~20:10 EDT)
-- **Card 1** (Ghost theme research): ✅ Done
-- **Card 2** (Design System + HTML Mockup): ✅ Approved
-- **Card 271** (Copy rewrite): ✅ Ready to Test
-- **Card 272** (Visuals): ✅ Done
-- **Card 3** (Server setup): ✅ Done
-- **Card 4** (HTML → Ghost Theme): ✅ Ready to Test — v1.0.1 deployed to both instances
-- **Card 5** (QA): ✅ Ready to Test — 14/17 passed clean, 3 fixed (lang toggle, FR privacy, hreflang). OG image generated+deployed.
-- **Post-Card 4/5 QA fixes (9+3 items):** ✅ All deployed
-- **Touchup round 1 (5 cards):** ✅ All Ready to Test
-  - Sound Familiar copy (GPT-5.4 3x critique), Grants gap, PME MTL removal (home+grants), Nav active state, Plan PME removal
-- **Touchup round 2 (rejections + new cards):**
-  - Sound Familiar copy re-tightened to 2-sentence cards: "Too much work still runs manually." Data entry / onboarding / approvals. ✅ Ready to Test
-  - Grants gap re-fixed — merged intro paragraph into hero section. ✅ Ready to Test
-  - Blue favicon (changed from green). ✅ Ready to Test
-  - Grants page fix (card #287) — consolidated two paragraphs into one (Lav's exact copy), widened paragraph max-width 600→800px, "Funding" label changed to plain text "Grants"/"Subventions". ✅ Ready to Test
-- **Card 6** (Initial Blog Posts): Pending — Lav said leave for later
-- **All other cards (hero spacing, avatars, Loi 25, services copy, about, homepage image, orphan section):** ✅ Ready to Test
+## Current state (Apr 9, ~22:35 EDT)
+- **Cards 1-5, 271, 272, 3** + all touchup/QA cards + grants fix (#287): ✅ All Ready to Test
+- **Card #289** (Google Analytics): ✅ Ready to Test — GA G-713K4T7T4J in default.hbs
+- **Card 6** (Initial Blog Posts): In Progress
+  - **Post #5** "What to Automate First" ✅ Published EN+FR
+    - EN: https://avenira.ai/blog/what-to-automate-first/
+    - FR: https://avenira.ai/fr/blogue/quoi-automatiser-en-premier/
+    - Cover image: "The Ignition" (power button + circuit traces, Avenira brand language)
+    - Research: Gemini Deep Research (282k tokens)
+    - Drafts: GPT-5.4 (EN ~1,600 words, FR ~1,700 words Québécois)
+  - 4 more posts remaining
 
 ## Key decisions
 - Hero illustration is a generated PNG (`assets/images/hero-illustration.png`), same image EN+FR (no text in image). **Do not regenerate** - Lav prefers the current version.
@@ -74,6 +67,10 @@ FR: `fr/index.html`, `fr/a-propos.html`, `fr/services.html`, `fr/subventions.htm
 - **ALWAYS browser-verify visual changes before claiming done.** Use `screencapture` + `image` tool.
 - Copy: "Built From Experience, Not Theory" is sacred - Lav's favorite line, never change it.
 - Founders: Lav Crnobrnja + Arfanuddin Khan (NOT Slobodan).
+- **post.hbs MUST wrap content in `{{#post}}...{{/post}}`** — Ghost 6.x requires this for title/content/feature_image to render.
+- **`{{reading_time}}`** outputs complete "X min read" string — don't append extra text. FR uses JS replace.
+- **Cover images:** Study existing brand assets (dark navy, electric blue/cyan glows, circuit motifs) before generating. Don't make generic stock images.
+- **"Coming soon" placeholder posts** were unpublished on both instances — don't recreate.
 
 ## Theme structure
 ```
@@ -109,4 +106,4 @@ avenira-theme/
 - Pain point cards: 2 sentences each max (cards are small — copy must fit)
 
 ## Next step
-Card 6: Initial Blog Posts (Lav said leave for later)
+Card 6: 4 more blog posts (Post #5 done, grant/funding SEO focus, bilingual)
