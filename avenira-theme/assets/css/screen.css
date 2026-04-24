@@ -1631,6 +1631,13 @@ img { max-width: 100%; height: auto; display: block; }
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
+  /* Kill backdrop-filter on header so position:fixed works on .nav-center inside it.
+     backdrop-filter creates a new containing block that traps fixed children. */
+  .site-header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(7, 13, 31, 0.97);
+  }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-illustration { order: -1; }
   .hero-illustration svg { max-width: 340px; }
@@ -1971,7 +1978,6 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* Make sure body content layers on top of ambient */
-.site-header,
 main,
 .site-footer,
 .cookie-banner { position: relative; z-index: 1; }
