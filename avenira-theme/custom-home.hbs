@@ -1,28 +1,173 @@
 {{!< default}}
 
-{{!-- ===== HERO ===== --}}
-<section class="hero bg-pattern">
+{{!-- ===== HERO (Circuit fan-out) ===== --}}
+<section class="hero hero-circuit">
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
         {{#match @site.locale "=" "en"}}
-          <h1>Get Your Time Back</h1>
-          <p class="hero-subtitle">We build automated workflows that cut admin, reduce errors, and free your team to focus on real work.</p>
+          {{!-- Eyebrow pill --}}
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="#4f86ff"/></svg>
+            </span>
+            <span class="mono hero-eyebrow-text">WORKFLOW AUTOMATION FOR SMBs</span>
+          </div>
+          <h1 class="hero-headline">Get Your <span class="hero-grad">Time</span> Back</h1>
+          <p class="hero-subtitle">We build <strong class="hero-strong">automated workflows</strong> that cut admin, reduce errors, and free your team to focus on real work.</p>
           <div class="hero-actions">
-            <a href="{{@site.url}}/contact/" class="btn btn-primary">Book a Discovery Call <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-            <a href="{{@site.url}}/services/" class="btn btn-secondary">See What We Automate</a>
+            <a href="{{@site.url}}/contact/" class="btn btn-primary btn-primary-gradient">
+              <span>Book a Discovery Call</span>
+              <span class="btn-arrow-circle" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </a>
+            <a href="{{@site.url}}/services/" class="btn btn-secondary btn-ghost-arrow">
+              <span>See What We Automate</span>
+              <svg class="btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
         {{else}}
-          <h1>Reprenez le contrôle de votre temps</h1>
-          <p class="hero-subtitle">On met en place des workflows automatisés qui réduisent l'admin, limitent les erreurs et redonnent du temps à votre équipe.</p>
+          {{!-- Eyebrow pill FR --}}
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="#4f86ff"/></svg>
+            </span>
+            <span class="mono hero-eyebrow-text">AUTOMATISATION DE WORKFLOWS POUR PME</span>
+          </div>
+          <h1 class="hero-headline">Reprenez le contrôle de votre <span class="hero-grad">temps</span></h1>
+          <p class="hero-subtitle">On met en place des <strong class="hero-strong">workflows automatisés</strong> qui réduisent l'admin, limitent les erreurs et redonnent du temps à votre équipe.</p>
           <div class="hero-actions">
-            <a href="{{@site.url}}/contact/" class="btn btn-primary">Réserver un appel découverte <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-            <a href="{{@site.url}}/services/" class="btn btn-secondary">Voir ce qu'on automatise</a>
+            <a href="{{@site.url}}/contact/" class="btn btn-primary btn-primary-gradient">
+              <span>Réserver un appel découverte</span>
+              <span class="btn-arrow-circle" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </a>
+            <a href="{{@site.url}}/services/" class="btn btn-secondary btn-ghost-arrow">
+              <span>Voir ce qu'on automatise</span>
+              <svg class="btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
         {{/match}}
       </div>
-      <div class="hero-illustration" aria-hidden="true">
-        <img src="{{asset "images/hero-illustration.png"}}" alt="Workflow automation: from chaos to order" style="width:100%;max-width:480px;height:auto;border-radius:16px;">
+
+      {{!-- Circuit fan-out visual --}}
+      <div class="hero-visual" aria-hidden="true">
+        <div class="circuit-frame">
+          <div class="circuit-frame-glow"></div>
+          <div class="circuit-frame-inner">
+            <div class="circuit-header">
+              <span class="circuit-status mono">
+                <span class="circuit-status-dot"></span>
+                {{#match @site.locale "=" "en"}}running{{else}}en cours{{/match}}
+              </span>
+            </div>
+
+            <div class="circuit-stage">
+              {{!-- SVG overlay: trunk + fan curves + traveling packets --}}
+              <svg class="circuit-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="wireC" x1="0" x2="1">
+                    <stop offset="0" stop-color="#4f86ff"/>
+                    <stop offset="1" stop-color="#34d399"/>
+                  </linearGradient>
+                  <filter id="glowC" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="0.6"/>
+                    <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+
+                {{!-- Trunk: source right edge (32) -> fan point (40) --}}
+                <path d="M 32 50 H 40" stroke="url(#wireC)" stroke-width="0.5" fill="none" filter="url(#glowC)" vector-effect="non-scaling-stroke"/>
+
+                {{!-- Fan curves to ty = 14, 38, 62, 86 --}}
+                <path d="M 40 50 C 48 50, 48 14, 56 14" stroke="url(#wireC)" stroke-width="0.5" fill="none" filter="url(#glowC)" vector-effect="non-scaling-stroke"/>
+                <path d="M 40 50 C 48 50, 48 38, 56 38" stroke="url(#wireC)" stroke-width="0.5" fill="none" filter="url(#glowC)" vector-effect="non-scaling-stroke"/>
+                <path d="M 40 50 C 48 50, 48 62, 56 62" stroke="url(#wireC)" stroke-width="0.5" fill="none" filter="url(#glowC)" vector-effect="non-scaling-stroke"/>
+                <path d="M 40 50 C 48 50, 48 86, 56 86" stroke="url(#wireC)" stroke-width="0.5" fill="none" filter="url(#glowC)" vector-effect="non-scaling-stroke"/>
+
+                {{!-- Connection dots at card left edges --}}
+                <circle cx="56" cy="14" r="0.8" fill="#34d399" filter="url(#glowC)"/>
+                <circle cx="56" cy="38" r="0.8" fill="#34d399" filter="url(#glowC)"/>
+                <circle cx="56" cy="62" r="0.8" fill="#34d399" filter="url(#glowC)"/>
+                <circle cx="56" cy="86" r="0.8" fill="#34d399" filter="url(#glowC)"/>
+
+                {{!-- Traveling packets --}}
+                <g class="circuit-packets">
+                  <circle r="0.7" fill="#9ef4cc">
+                    <animateMotion dur="2.6s" repeatCount="indefinite" begin="0s"
+                      path="M 32 50 H 40 C 48 50, 48 14, 56 14"/>
+                  </circle>
+                  <circle r="0.7" fill="#9ef4cc">
+                    <animateMotion dur="2.95s" repeatCount="indefinite" begin="0.4s"
+                      path="M 32 50 H 40 C 48 50, 48 38, 56 38"/>
+                  </circle>
+                  <circle r="0.7" fill="#9ef4cc">
+                    <animateMotion dur="3.3s" repeatCount="indefinite" begin="0.8s"
+                      path="M 32 50 H 40 C 48 50, 48 62, 56 62"/>
+                  </circle>
+                  <circle r="0.7" fill="#9ef4cc">
+                    <animateMotion dur="3.65s" repeatCount="indefinite" begin="1.2s"
+                      path="M 32 50 H 40 C 48 50, 48 86, 56 86"/>
+                  </circle>
+                </g>
+              </svg>
+
+              {{!-- Source (trigger) card --}}
+              <div class="circuit-source">
+                <div class="circuit-source-label mono">{{#match @site.locale "=" "en"}}TRIGGER{{else}}DÉCLENCHEUR{{/match}}</div>
+                <div class="circuit-source-body">
+                  <span class="circuit-icon-tile circuit-icon-blue">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 8l8 5.5L20 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </span>
+                  <div class="circuit-source-text">
+                    {{#match @site.locale "=" "en"}}
+                      <div class="circuit-source-title">New client</div>
+                      <div class="circuit-source-sub mono">signs up</div>
+                    {{else}}
+                      <div class="circuit-source-title">Nouveau client</div>
+                      <div class="circuit-source-sub mono">s'inscrit</div>
+                    {{/match}}
+                  </div>
+                </div>
+              </div>
+
+              {{!-- Terminal cards --}}
+              <div class="circuit-term" style="top:14%">
+                <span class="circuit-icon-tile circuit-icon-green">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 8l8 5.5L20 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </span>
+                <span class="circuit-term-label">{{#match @site.locale "=" "en"}}Email reply{{else}}Réponse courriel{{/match}}</span>
+                <span class="circuit-term-done mono">{{#match @site.locale "=" "en"}}DONE{{else}}FAIT{{/match}}</span>
+              </div>
+
+              <div class="circuit-term" style="top:38%">
+                <span class="circuit-icon-tile circuit-icon-green">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><rect x="3.5" y="5.5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 10h17M8 4v3M16 4v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </span>
+                <span class="circuit-term-label">{{#match @site.locale "=" "en"}}Calendar booked{{else}}Agenda réservé{{/match}}</span>
+                <span class="circuit-term-done mono">{{#match @site.locale "=" "en"}}DONE{{else}}FAIT{{/match}}</span>
+              </div>
+
+              <div class="circuit-term" style="top:62%">
+                <span class="circuit-icon-tile circuit-icon-green">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><path d="M6 3h8l4 4v14H6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 3v4h4M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </span>
+                <span class="circuit-term-label">{{#match @site.locale "=" "en"}}Docs sent{{else}}Docs envoyés{{/match}}</span>
+                <span class="circuit-term-done mono">{{#match @site.locale "=" "en"}}DONE{{else}}FAIT{{/match}}</span>
+              </div>
+
+              <div class="circuit-term" style="top:86%">
+                <span class="circuit-icon-tile circuit-icon-green">
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><ellipse cx="12" cy="6" rx="7" ry="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 6v12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6" stroke="currentColor" stroke-width="1.5"/><path d="M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+                </span>
+                <span class="circuit-term-label">{{#match @site.locale "=" "en"}}CRM updated{{else}}CRM mis à jour{{/match}}</span>
+                <span class="circuit-term-done mono">{{#match @site.locale "=" "en"}}DONE{{else}}FAIT{{/match}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

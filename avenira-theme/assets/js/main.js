@@ -5,41 +5,50 @@
 (function () {
   'use strict';
 
-  // --- Mobile Nav Toggle ---
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinks = document.getElementById('nav-links');
+  // --- Mobile Nav Toggle (new glass-pill structure) ---
+  // The collapsing wrapper is .nav-center; the ul inside is .nav-links (id=nav-links).
+  var navToggle = document.getElementById('nav-toggle');
+  var navLinks = document.getElementById('nav-links');
+  var navCenter = navLinks ? navLinks.closest('.nav-center') : null;
+
+  function closeMenu() {
+    if (navCenter) navCenter.classList.remove('open');
+    if (navLinks) navLinks.classList.remove('open');
+    if (navToggle) {
+      navToggle.setAttribute('aria-expanded', 'false');
+      var menuIcon = navToggle.querySelector('.icon-menu');
+      var closeIcon = navToggle.querySelector('.icon-close');
+      if (menuIcon) menuIcon.style.display = 'block';
+      if (closeIcon) closeIcon.style.display = 'none';
+    }
+  }
 
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', function () {
-      const isOpen = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-      // Swap icon
-      if (navToggle.querySelector('.icon-menu')) {
-        navToggle.querySelector('.icon-menu').style.display = isOpen ? 'none' : 'block';
+      var target = navCenter || navLinks;
+      var isOpen = target.classList.toggle('open');
+      // Keep a class on .nav-links too for backward-compat.
+      if (navLinks !== target) {
+        if (isOpen) navLinks.classList.add('open');
+        else navLinks.classList.remove('open');
       }
-      if (navToggle.querySelector('.icon-close')) {
-        navToggle.querySelector('.icon-close').style.display = isOpen ? 'block' : 'none';
-      }
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      var menuIcon = navToggle.querySelector('.icon-menu');
+      var closeIcon = navToggle.querySelector('.icon-close');
+      if (menuIcon) menuIcon.style.display = isOpen ? 'none' : 'block';
+      if (closeIcon) closeIcon.style.display = isOpen ? 'block' : 'none';
     });
 
-    // Close on link click
+    // Close on link click (except lang-toggle which navigates away anyway)
     navLinks.querySelectorAll('a:not(.lang-toggle)').forEach(function (link) {
-      link.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        if (navToggle.querySelector('.icon-menu')) navToggle.querySelector('.icon-menu').style.display = 'block';
-        if (navToggle.querySelector('.icon-close')) navToggle.querySelector('.icon-close').style.display = 'none';
-      });
+      link.addEventListener('click', closeMenu);
     });
 
     // Close on Escape
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
+      if (e.key === 'Escape' && ((navCenter && navCenter.classList.contains('open')) || navLinks.classList.contains('open'))) {
+        closeMenu();
         navToggle.focus();
-        if (navToggle.querySelector('.icon-menu')) navToggle.querySelector('.icon-menu').style.display = 'block';
-        if (navToggle.querySelector('.icon-close')) navToggle.querySelector('.icon-close').style.display = 'none';
       }
     });
   }
@@ -71,9 +80,10 @@
   }
 
   // --- Active nav indicator ---
+  // Works against both the old .nav-links and the new .nav-pill (same id=nav-links container).
   (function () {
     var path = window.location.pathname.replace(/\/$/, '') || '/';
-    var links = document.querySelectorAll('.nav-links a:not(.lang-toggle)');
+    var links = document.querySelectorAll('#nav-links a:not(.lang-toggle)');
     links.forEach(function (link) {
       var href = link.getAttribute('href');
       if (!href) return;
