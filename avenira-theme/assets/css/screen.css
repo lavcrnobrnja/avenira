@@ -1969,8 +1969,7 @@ img { max-width: 100%; height: auto; display: block; }
 .site-header,
 main,
 .site-footer,
-.cookie-banner,
-.skip-link { position: relative; z-index: 1; }
+.cookie-banner { position: relative; z-index: 1; }
 
 /* Mono utility */
 .mono { font-family: var(--mono-font); }
