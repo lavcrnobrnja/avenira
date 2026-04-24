@@ -38,16 +38,15 @@ Static HTML/CSS/JS mockup → Ghost theme on two Ghost instances (EN + FR) behin
 EN: `index.html`, `about.html`, `services.html`, `grants.html`, `contact.html`
 FR: `fr/index.html`, `fr/a-propos.html`, `fr/services.html`, `fr/subventions.html`, `fr/contact.html`
 
-## Current state (Apr 9, ~22:35 EDT)
+## Current state (Apr 24, ~16:30 EDT)
 - **Cards 1-5, 271, 272, 3** + all touchup/QA cards + grants fix (#287): ✅ All Ready to Test
 - **Card #289** (Google Analytics): ✅ Ready to Test — GA G-713K4T7T4J in default.hbs
+- **Hero Redesign (#349):** ✅ Ready to Test — all 5 step cards moved
+  - Glass-pill nav, circuit fan-out hero, ambient background, JetBrains Mono font
+  - Mobile nav fully working (see Learnings below for root cause)
+  - Branch: `cofoundergpt/hero-redesign`, final fix commit: `fba50a3`
 - **Card 6** (Initial Blog Posts): In Progress
   - **Post #5** "What to Automate First" ✅ Published EN+FR
-    - EN: https://avenira.ai/blog/what-to-automate-first/
-    - FR: https://avenira.ai/fr/blogue/quoi-automatiser-en-premier/
-    - Cover image: "The Ignition" (power button + circuit traces, Avenira brand language)
-    - Research: Gemini Deep Research (282k tokens)
-    - Drafts: GPT-5.4 (EN ~1,600 words, FR ~1,700 words Québécois)
   - 4 more posts remaining
 
 ## Key decisions
@@ -85,7 +84,7 @@ avenira-theme/
 ├─ index.hbs / post.hbs / tag.hbs / page.hbs  # Blog templates
 ├─ partials/ (header, footer, cookie-banner)
 ├─ locales/ (en.json, fr.json - 38 UI strings each)
-├─ assets/css/screen.css    # Full stylesheet (1855 lines)
+├─ assets/css/screen.css    # Full stylesheet (~2370 lines)
 ├─ assets/js/main.js        # Nav, cookies, scroll
 ├─ assets/images/hero-illustration.png
 ├─ assets/images/avatar-lav.jpeg
@@ -104,6 +103,13 @@ avenira-theme/
 - `.page-hero p` max-width: 800px (widened from 600px for grants page readability)
 - `.page-hero` section labels: plain text only, no icons (consistent across all pages)
 - Pain point cards: 2 sentences each max (cards are small — copy must fit)
+- **Mobile nav:** `backdrop-filter` on `.site-header` is killed at ≤1024px (creates containing block that traps fixed children). Do NOT add `.site-header` back to the ambient stacking rule (`position: relative; z-index: 1`) — it breaks fixed positioning.
+
+## Learnings (project-specific)
+- **deploy-theme.py doesn't rebuild the zip** — always `cd avenira-theme && zip -r ../avenira-theme.zip . -x routes-fr.yaml` BEFORE running deploy
+- **Ambient stacking rule broke header:** `position: relative; z-index: 1` on `.site-header` overrode `position: fixed; z-index: 1000`. Never include `.site-header` in broad stacking rules.
+- **backdrop-filter creates containing block:** Any ancestor with `backdrop-filter` traps `position: fixed` children. On mobile, `backdrop-filter: none !important` on `.site-header` is required.
+- **CSS resets can break skip links** — never include `.skip-link` in broad position rules
 
 ## Next step
 Card 6: 4 more blog posts (Post #5 done, grant/funding SEO focus, bilingual)
