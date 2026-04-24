@@ -2025,7 +2025,7 @@ main,
 /* Headline */
 .hero-headline {
   margin: 0 0 24px;
-  font-size: clamp(2.75rem, 6.4vw, 5.25rem);
+  font-size: clamp(52px, 6.4vw, 84px);
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.035em;
