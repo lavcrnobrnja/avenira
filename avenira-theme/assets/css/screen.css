@@ -1652,14 +1652,14 @@ img { max-width: 100%; height: auto; display: block; }
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(7, 13, 31, 0.98);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: #070d1f;
     padding: 32px 24px;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 999;
-    justify-content: flex-start;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
   }
   .nav-pill {
     flex-direction: column;
