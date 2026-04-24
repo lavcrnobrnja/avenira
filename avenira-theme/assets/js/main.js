@@ -14,6 +14,7 @@
   function closeMenu() {
     if (navCenter) navCenter.classList.remove('open');
     if (navLinks) navLinks.classList.remove('open');
+    document.body.style.overflow = '';
     if (navToggle) {
       navToggle.setAttribute('aria-expanded', 'false');
       var menuIcon = navToggle.querySelector('.icon-menu');
@@ -27,6 +28,7 @@
     navToggle.addEventListener('click', function () {
       var target = navCenter || navLinks;
       var isOpen = target.classList.toggle('open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
       // Keep a class on .nav-links too for backward-compat.
       if (navLinks !== target) {
         if (isOpen) navLinks.classList.add('open');
